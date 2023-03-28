@@ -1,7 +1,11 @@
-
+function createRestaurant(name){
+  return{
+    name: name
+  }
+}
 
 module.exports = {
-  // createRestaurant, 
+  createRestaurant, 
   // addMenuItem,
   // removeMenuItem
 }
