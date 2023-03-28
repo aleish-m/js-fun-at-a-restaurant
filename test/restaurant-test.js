@@ -24,7 +24,7 @@ describe("restaurant.js", function() {
       assert.equal(arepaRestaurant.name, "Quiero Arepas");
     });
 
-    it.skip("should have menus", function() {
+    it("should have menus", function() {
       var pizzaRestaurant = createRestaurant("Sexy Pizza");
 
       assert.isObject(pizzaRestaurant.menus);
