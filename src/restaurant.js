@@ -19,11 +19,16 @@ function removeMenuItem(restaurant, itemName, menuType){
   itemIndex = restaurant.menus[menuType].findIndex(findMenuItem)
 
   function findMenuItem(item){
-    item.name === itemName
+    return item.name === itemName
   }
 
-  restaurant.menus[menuType].splice(itemIndex,1)
-  return `No one is eating our ${itemName} - it has been removed from the breakfast menu!`
+  if(itemIndex != -1) {
+    restaurant.menus[menuType].splice(itemIndex, 1)
+    return `No one is eating our ${itemName} - it has been removed from the ${menuType} menu!`
+  } else {
+    return `Sorry, we don't sell ${itemName}, try adding a new recipe!`
+  }
+  
 }
 
 module.exports = {
