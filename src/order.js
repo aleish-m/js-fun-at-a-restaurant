@@ -1,5 +1,6 @@
 function takeOrder(order, ticket){
-  ticket.push(order)
+  if(ticket.length < 3){
+    ticket.push(order)}
 }
 
 module.exports = {
