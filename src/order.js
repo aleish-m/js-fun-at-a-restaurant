@@ -19,9 +19,18 @@ function listItems(ticket){
   }).join(", ")
 }
 
+function searchOrder(ticket, queryItem){
+  for(let i = 0; i < ticket.length; i++){
+    if (ticket[i].item.includes(queryItem)){
+      return true
+    }
+  }
+  return false
+}
+
 module.exports = {
   takeOrder,
   refundOrder,
   listItems,
-  // searchOrder
+  searchOrder
 }
