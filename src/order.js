@@ -3,9 +3,17 @@ function takeOrder(order, ticket){
     ticket.push(order)}
 }
 
+function refundOrder(number, ticket){
+  function findOrder(order){
+    return order.orderNumber === number
+  }
+  var order = ticket.findIndex(findOrder)
+  ticket.splice(order, 1)
+}
+
 module.exports = {
   takeOrder,
-  // refundOrder,
+  refundOrder,
   // listItems,
   // searchOrder
 }
