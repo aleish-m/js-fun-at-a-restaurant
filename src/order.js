@@ -4,16 +4,24 @@ function takeOrder(order, ticket){
 }
 
 function refundOrder(number, ticket){
+  var order = ticket.findIndex(findOrder)
+  
   function findOrder(order){
     return order.orderNumber === number
   }
-  var order = ticket.findIndex(findOrder)
+  
   ticket.splice(order, 1)
+}
+
+function listItems(ticket){
+  return ticket.map(function (order){
+    return order.item
+  }).join(", ")
 }
 
 module.exports = {
   takeOrder,
   refundOrder,
-  // listItems,
+  listItems,
   // searchOrder
 }
