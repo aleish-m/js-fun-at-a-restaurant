@@ -1,7 +1,11 @@
 function createRestaurant(name){
   return{
     name: name,
-    menus: {}
+    menus: {
+      breakfast: [],
+      lunch: [],
+      dinner: []
+    }
   }
 }
 

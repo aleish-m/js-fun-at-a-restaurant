@@ -30,7 +30,7 @@ describe("restaurant.js", function() {
       assert.isObject(pizzaRestaurant.menus);
     });
 
-    it.skip("should have different types of menus", function() {
+    it("should have different types of menus", function() {
       var pizzaRestaurant = createRestaurant("Sexy Pizza");
 
       assert.deepEqual(pizzaRestaurant.menus.breakfast, []);
