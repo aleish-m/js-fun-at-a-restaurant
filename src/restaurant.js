@@ -1,6 +1,7 @@
 function createRestaurant(name){
   return{
-    name: name
+    name: name,
+    menus: {}
   }
 }
 
