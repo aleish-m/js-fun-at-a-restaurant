@@ -10,20 +10,26 @@ function createRestaurant(name){
 }
 
 function addMenuItem(restaurant, meal){
-  if (!restaurant.menus[meal.type].includes(meal)){
+  mealIndex = checkMenuItem(restaurant, meal.type, meal.name)
+  if (mealIndex === -1){
     restaurant.menus[meal.type].push(meal)
   }
 }
 
-function removeMenuItem(restaurant, itemName, menuType){
-  itemIndex = restaurant.menus[menuType].findIndex(findMenuItem)
-
-  function findMenuItem(item){
+function checkMenuItem(restaurant, menuType, itemName){
+  menu = restaurant.menus[menuType]
+  function findMenuItem(item) {
     return item.name === itemName
   }
+  return menu.findIndex(findMenuItem)
+}
 
-  if(itemIndex != -1) {
-    restaurant.menus[menuType].splice(itemIndex, 1)
+
+function removeMenuItem(restaurant, itemName, menuType){
+  mealIndex = checkMenuItem(restaurant, menuType, itemName)
+
+  if (mealIndex != -1) {
+    restaurant.menus[menuType].splice(mealIndex, 1)
     return `No one is eating our ${itemName} - it has been removed from the ${menuType} menu!`
   } else {
     return `Sorry, we don't sell ${itemName}, try adding a new recipe!`
